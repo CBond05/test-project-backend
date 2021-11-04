@@ -1,0 +1,21 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.4",
+    "@types/node": "^16.11.6"
+  }
+}
