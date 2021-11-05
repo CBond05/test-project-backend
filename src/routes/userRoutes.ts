@@ -12,10 +12,10 @@ router
 .post('/users', async ctx => {
     ctx.body='hello from post user route';
 })
-.put('/user/:id', async ctx => {
+.put('/users/:id', async ctx => {
     ctx.body='hello from update user route';
 })
-.delete('/user/:id', async ctx => {
+.delete('/users/:id', async ctx => {
     ctx.body='hello from delete user route';
 });
 
