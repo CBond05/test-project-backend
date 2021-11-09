@@ -1,8 +1,8 @@
 import * as Router from "koa-router";
 
-const router = new Router({ prefix: '/api' });
+const usersRouter = new Router({ prefix: '/api' });
 
-router
+usersRouter
 .get('/users', async ctx => {
     ctx.body='hello from get users route';
 })
@@ -19,4 +19,4 @@ router
     ctx.body='hello from delete user route';
 });
 
-export default router;
+export default usersRouter;
