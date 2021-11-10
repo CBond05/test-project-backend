@@ -1,22 +1,22 @@
 import {ProjectsModel} from '../models/Projects.model'
 
-export const fetchAllProjects = async () => {
+export const fetchAllProjects = () => {
     return ProjectsModel.query()
         .select(["id", "name"])
         .where({ is_active: true })
 }
-export const fetchProjectById = async (id: number) => {
+export const fetchProjectById = (id: number) => {
     return ProjectsModel.query()
         .findById(id)
 }
-export const createProject = async (project: any) => {
+export const createProject = (project: any) => {
     return ProjectsModel.query()
         .insertAndFetch(project)
 }
-export const updateProjectById = async (id: number, project: any) => {
+export const updateProjectById = (id: number, project: any) => {
     return ProjectsModel.query().update(project).where({id})
 }
-export const removeProjectById = async (id: number) => {
+export const removeProjectById = (id: number) => {
     //soft delete
     return ProjectsModel.query().update({is_active: false}).where({id})
     // hard delete

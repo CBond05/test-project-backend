@@ -1,4 +1,4 @@
-import { fetchAllProjects, fetchProjectById, createProject, updateProjectById, removeProjectById } from '../services/Projects.service';
+import { fetchAllProjects, fetchProjectById, createProject, updateProjectById, removeProjectById } from '../services/projects.service';
 import { ParameterizedContext } from 'koa';
 
 export const fetchAllProjectsCtrl = async (ctx: ParameterizedContext ) => {
@@ -30,7 +30,7 @@ export const createProjectCtrl = async (ctx: ParameterizedContext ) => {
 }
 export const updateProjectByIdCtrl = async (ctx: ParameterizedContext ) => {
     const { params: {id} } = ctx;
-    const body = ctx.request;
+const { body } = ctx.request;
     try {
         const updatedProject = await updateProjectById(id, body);
         ctx.ok(updatedProject)
@@ -47,3 +47,16 @@ export const removeProjectByIdCtrl = async (ctx: ParameterizedContext ) => {
         ctx.throw(err)
     }
 }
+
+// add common fields in model
+// add md in index.ts root file
+// create md and move try/catch to errMD, 
+// migration and seed runner and transaction wrapper
+// index.ts in model, ctrl, service
+// query paramsParser
+
+// http://localhost:3000/todos?user=1&useruser=2&is_active=false
+
+// const { query } = ctx
+// typeof query.user => string, typeof query.is_active => string
+// user: [1,2]

@@ -1,11 +1,13 @@
 import * as Koa from 'koa';
 import * as Router from "koa-router";
-import projectsRouter from './routes/Projects.router';
+import projectsRouter from './routes/projects.router';
 import { WEB_SERVER_SETTINGS } from "./constants/global";
 import './knex';
 
 const app = new Koa();
 const router = new Router({prefix: "/api"});
+
+// add common middlewares
 
 router.use(projectsRouter().middleware())
 

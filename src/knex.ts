@@ -18,4 +18,6 @@ pg.types.setTypeParser(pg.types.builtins.NUMERIC, (value: string) => {
    return parseFloat(value);
 });
 
+// todo. 1. add migration runner , add seed runner
+
 export default Knex(knexConfig);

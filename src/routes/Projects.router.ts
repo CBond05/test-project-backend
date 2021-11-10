@@ -1,6 +1,6 @@
 import * as Router from 'koa-joi-router';
 
-import {fetchAllProjectsCtrl, fetchProjectByIdCtrl, createProjectCtrl, updateProjectByIdCtrl, removeProjectByIdCtrl} from '../controllers/Projects.controller'
+import {fetchAllProjectsCtrl, fetchProjectByIdCtrl, createProjectCtrl, updateProjectByIdCtrl, removeProjectByIdCtrl} from '../controllers/projects.controller'
 
 const projectsRouter = Router();
 projectsRouter.prefix('/projects');
@@ -8,7 +8,7 @@ projectsRouter.prefix('/projects');
 projectsRouter.route({
     method: 'get',
     path: "/",
-    handler: fetchAllProjectsCtrl
+    handler: fetchAllProjectsCtrl,
 });
 projectsRouter.route({
     method: 'get',
