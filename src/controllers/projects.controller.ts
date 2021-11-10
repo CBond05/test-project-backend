@@ -2,50 +2,31 @@ import { fetchAllProjects, fetchProjectById, createProject, updateProjectById, r
 import { ParameterizedContext } from 'koa';
 
 export const fetchAllProjectsCtrl = async (ctx: ParameterizedContext ) => {
-    try {
         const projects = await fetchAllProjects();
         ctx.ok(projects)
-    } catch (err) {
-        ctx.throw(err)
-    }
-    
 }
 export const fetchProjectByIdCtrl = async (ctx: ParameterizedContext ) => {
-    const { params: {id} } = ctx;
-    try {
+        const { params: {id} } = ctx;
         const project = await fetchProjectById(id);
         ctx.ok(project)
-    } catch (err) {
-        ctx.throw(err)
-    }
+   
 }
 export const createProjectCtrl = async (ctx: ParameterizedContext ) => {
-    const  body = ctx.request;
-    try {
+        const  body = ctx.request;
         const createdProject = await createProject(body);
         ctx.ok(createdProject)
-    } catch (err) {
-        ctx.throw(err)
-    }
+   
 }
 export const updateProjectByIdCtrl = async (ctx: ParameterizedContext ) => {
-    const { params: {id} } = ctx;
-const { body } = ctx.request;
-    try {
+        const { params: {id} } = ctx;
+        const { body } = ctx.request;
         const updatedProject = await updateProjectById(id, body);
         ctx.ok(updatedProject)
-    } catch (err) {
-        ctx.throw(err)
-    }
 }
 export const removeProjectByIdCtrl = async (ctx: ParameterizedContext ) => {
-    const { params: {id} } = ctx;
-    try {
+        const { params: {id} } = ctx;
         const removedProject = await removeProjectById(id);
         ctx.ok(removedProject)
-    } catch (err) {
-        ctx.throw(err)
-    }
 }
 
 // add common fields in model

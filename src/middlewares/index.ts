@@ -6,3 +6,18 @@ import * as respond from "koa-respond"
 import { compose } from 'koa-convert'
 //@ts-ignore
 import * as responseTime from "koa-response-time"
+import errorHandler from "./errorHandler"
+import corsOptions from "./cors.options";
+import bodyParserOptions from "./bodyparser.options";
+import respondOptions from "./respond.options";
+
+const commonMiddlewares = () =>
+    compose([
+        errorHandler,
+        bodyParser(bodyParserOptions),
+        cors(corsOptions),
+        respond(respondOptions),
+        responseTime()
+    ]);
+
+export { commonMiddlewares };
