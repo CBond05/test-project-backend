@@ -8,8 +8,6 @@ import { commonMiddlewares } from './middlewares';
 const app = new Koa();
 const router = new Router({prefix: "/api"});
 
-// add common middlewares
-
 app.use(commonMiddlewares());
 
 router.use(projectsRouter().middleware())

@@ -1,4 +1,4 @@
-import { CommonFields } from './commonFields.model';
+import { CommonFields } from './CommonFields.model';
 import knex from "../knex";
 
 class Users extends CommonFields {

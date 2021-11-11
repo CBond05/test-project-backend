@@ -10,9 +10,11 @@ import errorHandler from "./errorHandler"
 import corsOptions from "./cors.options";
 import bodyParserOptions from "./bodyparser.options";
 import respondOptions from "./respond.options";
+import queryParamsParser from "./queryParamsParser"
 
 const commonMiddlewares = () =>
     compose([
+        queryParamsParser,
         errorHandler,
         bodyParser(bodyParserOptions),
         cors(corsOptions),
